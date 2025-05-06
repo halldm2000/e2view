@@ -32,10 +32,22 @@ export function activate(context: vscode.ExtensionContext) {
         // Optional: Handle messages from the webview (React app)
         panel.webview.onDidReceiveMessage(
             message => {
+                console.log("Message received from webview:", message);
                 switch (message.command) {
                     case 'alert':
                         vscode.window.showErrorMessage(message.text);
                         return;
+                    case 'buttonClick':
+                        // Show the received payload in an info message
+                        vscode.window.showInformationMessage(`Received from React: ${message.payload}`);
+
+                        // --- Send a response back to the webview --- 
+                        panel.webview.postMessage({
+                            command: 'updateMessage',
+                            data: `Extension received your message at ${new Date().toLocaleTimeString()}`
+                        });
+                        return;
+                    // Add more cases for other commands from the webview
                 }
             },
             undefined,
