@@ -5,22 +5,20 @@
   "publisher": "NVIDIA",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.99.0",
     "vscode": "^1.96.0"
-
   },
   "categories": [
     "Other"
   ],
   "activationEvents": [
-    "onCommand:e2view-ext.helloWorld"
+    "onCommand:e2view.open"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "e2view-ext.helloWorld",
-        "title": "Hello World"
+        "command": "e2view.open",
+        "title": "e2view: Open e2viewer"
       }
     ]
   },
