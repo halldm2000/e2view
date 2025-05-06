@@ -1,0 +1,34 @@
+# Node.js dependencies
+node_modules/
+
+# UI build output
+ui-dist/
+
+# Output from TypeScript compiler
+out/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Environment variables
+.env*
+
+# VS Code specific user settings (if any)
+.vscode/*.user
+.vscode/.ropeproject
+
+# Test results
+coverage/
+*.lcov
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db 
